@@ -1,0 +1,31 @@
+##Recuperar todas las peliclas
+GET http://localhost:1234/movies
+
+###Recuperar pelicula por id
+GET http://localhost:1234/movies/02c3e1c8-c39a-4f35-b59c-1c27872d068c
+
+###Recuperar todas las peliculas por un genero
+GET http://localhost:1234/movies?genre=ROMANCE
+
+### CREAR una pelicula
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "Que culpa tiene el niño?",
+    "year": 2016,
+    "director": "Gustavo Loza",
+    "duration": 105,
+    "poster": "https://www.themoviedb.org/t/p/w220_and_h330_face/md3iYDpi6rlrAF6iyJyzdOzyUEV.jpg",
+    "genre": ["Comedy", "Romance"],
+    "rate": 6.6
+  }
+
+
+###Actualizar una pelicula
+PATCH http://localhost:1234/movies/02c3e1c8-c39a-4f35-b59c-1c27872d068c
+Content-Type: application/json
+
+{
+  "rate":9.9
+}
